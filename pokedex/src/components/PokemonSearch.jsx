@@ -1,17 +1,24 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { getPokemon } from '../Utils/API-Call'
 
 export default function PokemonSearch() {
-const [searchPkm, setSearchPkm] = useState("")
+const [searchPkm, setSearchPkm] = useState("pikachu")
 const [newSearch, setNewSearch] = useState("")
 
 useEffect (()=>{
     console.log("searchPkm -> ", searchPkm)
+    getPokemon(searchPkm)
+    .then((data)=>{
+        console.log(data)
+    }
+    )
 },[searchPkm])
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    setSearchPkm("")
+    setSearchPkm(newSearch)
+    setNewSearch("")
   }
 
   return (
