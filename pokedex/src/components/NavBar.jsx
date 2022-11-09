@@ -6,6 +6,7 @@ export default function NavBar() {
     <div className="NavBar">
       <nav>
         <Link to="/">Home</Link>
+        <Link to="/search">Search for Pokemon</Link>
       </nav>
     </div>
   );
